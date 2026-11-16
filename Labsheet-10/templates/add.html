@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Medicine Entry</h2>
+<form method="POST" action="{{ url_for('add_medicine') }}" class="card">
+  <label for="medicine_id">Medicine ID</label>
+  <input type="number" id="medicine_id" name="medicine_id" required>
+
+  <label for="name">Medicine Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="category">Category</label>
+  <input type="text" id="category" name="category" required>
+
+  <label for="price">Price (&#8377;)</label>
+  <input type="number" id="price" name="price" step="0.01" min="0" required>
+
+  <label for="stock">Stock</label>
+  <input type="number" id="stock" name="stock" min="0" required>
+
+  <label for="manufacturer">Manufacturer</label>
+  <input type="text" id="manufacturer" name="manufacturer" required>
+
+  <h3>Supplier (optional - stored as an embedded document)</h3>
+  <label for="supplier_name">Supplier Name</label>
+  <input type="text" id="supplier_name" name="supplier_name">
+  <label for="supplier_phone">Supplier Phone</label>
+  <input type="text" id="supplier_phone" name="supplier_phone">
+  <label for="supplier_city">Supplier City</label>
+  <input type="text" id="supplier_city" name="supplier_city">
+
+  <button type="submit">Submit</button>
+</form>
+{% endblock %}

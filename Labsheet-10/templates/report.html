@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Medicine Inventory Report</h2>
+<div class="report-grid">
+  <div class="stat"><div class="num">{{ total_medicines }}</div>Total medicines</div>
+  <div class="stat"><div class="num">{{ total_stock }}</div>Total stock (units)</div>
+  <div class="stat"><div class="num">{{ low|length }}</div>Low-stock medicines (below {{ limit }})</div>
+</div>
+
+<h3>Medicines with Low Stock</h3>
+{% set medicines = low %}
+{% include "_table.html" %}
+
+<h3>Most Expensive Medicine</h3>
+{% if expensive %}
+  <p><strong>{{ expensive.name }}</strong> ({{ expensive.category }}) - &#8377;{{ expensive.price }}, {{ expensive.manufacturer }}</p>
+{% else %}<p>No data.</p>{% endif %}
+
+<h3>Cheapest Medicine</h3>
+{% if cheapest %}
+  <p><strong>{{ cheapest.name }}</strong> ({{ cheapest.category }}) - &#8377;{{ cheapest.price }}, {{ cheapest.manufacturer }}</p>
+{% else %}<p>No data.</p>{% endif %}
+{% endblock %}

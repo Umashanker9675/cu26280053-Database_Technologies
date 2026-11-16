@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Update Stock</h2>
+<form method="POST" class="card">
+  <label for="medicine_id">Medicine ID</label>
+  <input type="number" id="medicine_id" name="medicine_id" required>
+  <label for="new_stock">New Stock</label>
+  <input type="number" id="new_stock" name="new_stock" min="0" required>
+  <button type="submit">Update Stock</button>
+</form>
+{% if updated %}
+  <h3>Updated information</h3>
+  <table>
+    <tr><th>Medicine ID</th><td>{{ updated.medicine_id }}</td></tr>
+    <tr><th>Medicine Name</th><td>{{ updated.name }}</td></tr>
+    <tr><th>Category</th><td>{{ updated.category }}</td></tr>
+    <tr><th>Price</th><td>&#8377;{{ updated.price }}</td></tr>
+    <tr><th>Stock</th><td>{{ updated.stock }}</td></tr>
+    <tr><th>Manufacturer</th><td>{{ updated.manufacturer }}</td></tr>
+  </table>
+{% endif %}
+{% endblock %}

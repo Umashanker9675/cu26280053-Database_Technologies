@@ -1,0 +1,26 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f3f5f9; color: #222; }
+header { background: #1f3a5f; color: #fff; padding: 14px 24px; }
+header h1 { margin: 0 0 8px; font-size: 22px; }
+nav a { color: #cfe0ff; text-decoration: none; margin-right: 16px; font-size: 14px; }
+nav a:hover { color: #fff; text-decoration: underline; }
+main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
+h2 { color: #1f3a5f; border-bottom: 2px solid #1f3a5f; padding-bottom: 6px; }
+.card { background: #fff; padding: 18px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,.12); margin-bottom: 18px; max-width: 460px; }
+label { display: block; margin: 10px 0 4px; font-weight: bold; font-size: 14px; }
+input, select { width: 100%; padding: 8px; border: 1px solid #b8c1d1; border-radius: 4px; font-size: 14px; }
+button { margin-top: 14px; padding: 9px 20px; background: #2d6cdf; color: #fff; border: 0; border-radius: 4px; cursor: pointer; font-size: 14px; }
+button:hover { background: #1f55b8; }
+button.danger { background: #c0392b; }
+button.danger:hover { background: #962d22; }
+table { width: 100%; border-collapse: collapse; background: #fff; margin: 12px 0 24px; }
+th, td { border: 1px solid #d5dbe6; padding: 8px 10px; text-align: left; font-size: 14px; }
+thead th, tr th:first-child { background: #e8eef9; }
+.alert { padding: 10px 14px; border-radius: 4px; margin-bottom: 14px; }
+.alert.success { background: #e2f6e7; border: 1px solid #8fd19e; color: #1b5e2f; }
+.alert.error { background: #fde7e5; border: 1px solid #f1a29a; color: #8e2218; }
+.menu { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+.menu a { display: block; background: #fff; padding: 16px; text-align: center; border-radius: 8px; text-decoration: none; color: #1f3a5f; font-weight: bold; box-shadow: 0 1px 4px rgba(0,0,0,.12); }
+.menu a:hover { background: #e8eef9; }
+.filters { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; }
+footer { text-align: center; color: #777; font-size: 12px; padding: 20px; }

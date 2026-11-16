@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Student Record Management{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header>
+    <h1>Student Record Management System</h1>
+    <nav>
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('add_student') }}">Add Student</a>
+      <a href="{{ url_for('view_students') }}">View Students</a>
+      <a href="{{ url_for('search_student') }}">Search Student</a>
+      <a href="{{ url_for('update_student') }}">Update Student</a>
+      <a href="{{ url_for('delete_student') }}">Delete Student</a>
+      <a href="{{ url_for('filter_students') }}">Filters</a>
+    </nav>
+  </header>
+  <main>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for category, message in messages %}
+        <div class="alert {{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer>MCA105P - Database Technologies | Lab Sheet 9</footer>
+</body>
+</html>

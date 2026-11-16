@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Home</h2>
+<div class="alert {{ 'success' if ok else 'error' }}">{{ message }}</div>
+{% if ok %}<p>Students stored in the database: <strong>{{ count }}</strong></p>{% endif %}
+<ul class="menu">
+  <li><a href="{{ url_for('add_student') }}">Add Student</a></li>
+  <li><a href="{{ url_for('view_students') }}">View Students</a></li>
+  <li><a href="{{ url_for('search_student') }}">Search Student</a></li>
+  <li><a href="{{ url_for('update_student') }}">Update Student</a></li>
+  <li><a href="{{ url_for('delete_student') }}">Delete Student</a></li>
+  <li><a href="{{ url_for('filter_students') }}">Filter Students</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>MongoDB Query Practice</h2>
+<div class="filters">
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="category">
+    <label for="cat">(a) Category</label>
+    <input type="text" id="cat" name="value" placeholder="e.g. Antibiotic" required>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="price_gt_50">
+    <label>(b) Price more than &#8377;50</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="price_lt_100">
+    <label>(c) Price less than &#8377;100</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="stock_lt_30">
+    <label>(d) Stock less than 30</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="manufacturer">
+    <label for="mf">(e) Manufacturer</label>
+    <input type="text" id="mf" name="value" placeholder="e.g. ABC Pharma" required>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="sort_price">
+    <label>(f) Sort by price</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="sort_stock">
+    <label>(g) Sort by stock</label>
+    <button type="submit">Show</button>
+  </form>
+</div>
+{% if medicines is not none %}
+  <h3>{{ title }}</h3>
+  {% include "_table.html" %}
+{% endif %}
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Filter Students</h2>
+<div class="filters">
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="department">
+    <label for="department">(a) Department</label>
+    <input type="text" id="department" name="department" required>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="marks_gt_75">
+    <label>(b) Marks greater than 75</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="marks_50_80">
+    <label>(c) Marks between 50 and 80</label>
+    <button type="submit">Show</button>
+  </form>
+  <form method="POST" class="card">
+    <input type="hidden" name="kind" value="age_gt_20">
+    <label>(d) Older than 20</label>
+    <button type="submit">Show</button>
+  </form>
+</div>
+{% if students is not none %}
+  <h3>{{ title }}</h3>
+  {% include "_table.html" %}
+{% endif %}
+{% endblock %}

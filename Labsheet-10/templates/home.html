@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Home</h2>
+<div class="alert {{ 'success' if ok else 'error' }}">{{ message }}</div>
+{% if ok %}<p>Medicines in the database: <strong>{{ count }}</strong></p>{% endif %}
+<ul class="menu">
+  <li><a href="{{ url_for('add_medicine') }}">Add Medicine</a></li>
+  <li><a href="{{ url_for('view_medicines') }}">View Medicines</a></li>
+  <li><a href="{{ url_for('search_medicine') }}">Search Medicine</a></li>
+  <li><a href="{{ url_for('update_stock') }}">Update Stock</a></li>
+  <li><a href="{{ url_for('delete_medicine') }}">Delete Medicine</a></li>
+  <li><a href="{{ url_for('low_stock') }}">Low Stock</a></li>
+  <li><a href="{{ url_for('queries') }}">Query Practice</a></li>
+  <li><a href="{{ url_for('suppliers') }}">Suppliers</a></li>
+  <li><a href="{{ url_for('report') }}">Inventory Report</a></li>
+</ul>
+{% endblock %}

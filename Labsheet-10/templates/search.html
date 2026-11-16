@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Search Medicine</h2>
+<form method="POST" class="card">
+  <label for="term">Medicine ID or Medicine Name</label>
+  <input type="text" id="term" name="term" placeholder="e.g. 301 or para" required>
+  <button type="submit">Search</button>
+</form>
+{% if searched %}
+  {% if results %}
+    {% set medicines = results %}
+    <h3>{{ results|length }} medicine(s) found</h3>
+    {% include "_table.html" %}
+  {% else %}
+    <div class="alert error">No medicine found.</div>
+  {% endif %}
+{% endif %}
+{% endblock %}

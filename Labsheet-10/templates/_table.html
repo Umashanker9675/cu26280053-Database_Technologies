@@ -1,0 +1,15 @@
+<table>
+  <thead>
+    <tr><th>Medicine ID</th><th>Medicine Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Manufacturer</th></tr>
+  </thead>
+  <tbody>
+    {% for m in medicines %}
+    <tr {% if m.stock < 30 %}class="low"{% endif %}>
+      <td>{{ m.medicine_id }}</td><td>{{ m.name }}</td><td>{{ m.category }}</td>
+      <td>&#8377;{{ m.price }}</td><td>{{ m.stock }}</td><td>{{ m.manufacturer }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="6">No medicines found.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Medicines with Supplier Information (embedded documents)</h2>
+<table>
+  <thead>
+    <tr><th>ID</th><th>Medicine</th><th>Category</th><th>Price</th><th>Stock</th>
+        <th>Supplier Name</th><th>Phone</th><th>City</th></tr>
+  </thead>
+  <tbody>
+    {% for m in medicines %}
+    <tr>
+      <td>{{ m.medicine_id }}</td><td>{{ m.name }}</td><td>{{ m.category }}</td>
+      <td>&#8377;{{ m.price }}</td><td>{{ m.stock }}</td>
+      <td>{{ m.supplier.name }}</td><td>{{ m.supplier.phone }}</td><td>{{ m.supplier.city }}</td>
+    </tr>
+    {% else %}
+    <tr><td colspan="8">No medicines with supplier information yet.</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
